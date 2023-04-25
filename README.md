@@ -15,7 +15,7 @@ dropping null values, removing movies with less than 10 votes and a vote average
 
 The code is divided into several sections, each of which performs a specific function. We will now go over each section of the code in more detail.
 
-### Imports
+### Imports :
 
 The first section of the code imports the necessary libraries and modules that are needed to run the application. The following libraries and modules are imported:
 
@@ -24,11 +24,11 @@ The first section of the code imports the necessary libraries and modules that a
 - `SentenceTransformer` - for generating sentence embeddings
 - `streamlit` - for building the web application
 
-### Load Movie Dataset
+### Load Movie Dataset :
 
 The second section of the code loads the movie metadata from a CSV file called `movies_metadata_preprocessed.csv`. The metadata includes information such as the title of the movie, the overview of the movie, and other relevant information. The `pandas` library is used to load the CSV file.
 
-### Functions
+### Functions :
 
 The third section of the code defines several functions that are used throughout the application. The functions include:
 
@@ -36,19 +36,19 @@ The third section of the code defines several functions that are used throughout
 - `get_index(title)` - Returns the index of a movie given its title.
 - `compute_similarity_matrix()` - Computes the similarity matrix between the embeddings of the movie overviews.
 
-### Streamlit App
+### Streamlit App :
 
 The fourth section of the code creates the streamlit application. This includes defining the title of the application, setting the appearance of the page, and creating an input field for the user to enter the name of a movie.
 
 The `page_bg_img` variable is used to set the background image of the application. The `st.markdown()` function is used to display the background image. The `st.selectbox()` function is used to create an input field where the user can select a movie from a dropdown list.
 
-### Recommendation Code
+### Recommendation Code :
 
 The fifth section of the code performs the recommendation based on the input movie. When the user clicks the "Get Recommendations" button, the application computes the similarity between the input movie and all other movies in the dataset. The results are then sorted based on their similarity score and the top 3 movies are displayed, along with their overviews.
 
 The `recommendations` variable is a list of tuples containing the index of the recommended movie and its similarity score. The `sorted()` function is used to sort the recommendations based on their similarity score. The `st.write()` function is used to display the top 3 recommended movies along with their overviews.
 
-### Caching
+### Caching :
 
 The code also includes caching using `@st.cache_resource` to speed up the computation of the similarity matrix. This means that the similarity matrix will only be computed once and then stored in cache, so that subsequent requests for the similarity matrix will be served from cache instead of being recomputed. This significantly reduces the time it takes to generate the recommendations.
 
@@ -68,4 +68,4 @@ We use the following librairies :
 
 ## Results and Conclusions :
 
-## Future Work :
+The project was enjoyable, but we had to complete it quickly. We also tried to test sentiment analysis by analyzing the overall sentiment of a movie's subtitle file, but it took a lot of time and we didn't end up implementing it due to this reason, as well as the lack of a reliable source to download full sentences from every movie in batches.
