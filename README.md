@@ -4,7 +4,7 @@
 
 We will make a tool for movie recommendations.
 
-This is a 10-day individual learning project at BeCode Liège.
+This is an individual learning project at BeCode Liège.
 
 ## Basic overview :
 
@@ -14,14 +14,8 @@ A *requirement.txt* file is provided, Python 3.10.6 was used as a base environne
 
 We use the following librairies :
 
-* 
-
-## 1. :
-
-
+* ## 1. :
 
 ## Results and Conclusions :
-
-
 
 ## Future Work :
