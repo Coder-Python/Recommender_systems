@@ -1,8 +1,8 @@
 # Movie Recommendations
 
-This is an individual 10days learning project at BeCode Liège.
+This is an individual 10 days learning project at BeCode Liège.
 
-## Introduction
+## Introduction :
 
 The Movie Recommendation App is a web application that recommends movies to users based on the similarity of movie overviews. The application is built using the `streamlit` library in Python, which is used to build interactive web applications. The app uses a pre-trained `SentenceTransformer` model to generate embeddings of movie overviews, and then computes the cosine similarity between these embeddings to generate a similarity matrix.
 
@@ -17,7 +17,7 @@ The code is divided into several sections, each of which performs a specific fun
 
 ### Imports :
 
-The first section of the code imports the necessary libraries and modules that are needed to run the application. The following libraries and modules are imported:
+The first section of the code imports the necessary libraries and modules that are needed to run the application. The following libraries and modules are imported :
 
 - `pandas` - for data manipulation and analysis
 - `cosine_similarity` - from `sklearn.metrics.pairwise` for computing cosine similarity between embeddings
@@ -30,7 +30,7 @@ The second section of the code loads the movie metadata from a CSV file called `
 
 ### Functions :
 
-The third section of the code defines several functions that are used throughout the application. The functions include:
+The third section of the code defines several functions that are used throughout the application. The functions include :
 
 - `get_title(index)` - Returns the title of a movie given its index.
 - `get_index(title)` - Returns the index of a movie given its title.
