@@ -119,7 +119,7 @@ The third section of the code defines several functions that are used throughout
 - `get_index(title)` - Returns the index of a movie given its title.
 - `compute_similarity_matrix()` - Computes the similarity matrix between the embeddings of the movie overviews.
 
-### 2.4 Streamlit app :
+### 2.4 Streamlit App :
 
 ```python
 # Streamlit app
