@@ -228,5 +228,3 @@ The project was enjoyable, but we had to complete it quickly. We also tried to t
 ## Author :
 
 Sébastien Rahir
-
-[LinkedIn](https://www.linkedin.com/in/sebastien-rahir/)
