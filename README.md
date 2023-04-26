@@ -79,8 +79,8 @@ The code is divided into several sections, each of which performs a specific fun
 The first section of the code imports the necessary libraries and modules that are needed to run the application. The following libraries and modules are imported :
 
 - `pandas` - for data manipulation and analysis
-- `cosine_similarity` - from `sklearn.metrics.pairwise` for computing cosine similarity between embeddings
 - `SentenceTransformer` - for generating sentence embeddings
+- `cosine_similarity` - from `sklearn.metrics.pairwise` for computing cosine similarity between embeddings
 - `streamlit` - for building the web application
 
 ### 2.2 Load Movie Dataset :
