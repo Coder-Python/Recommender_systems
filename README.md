@@ -24,6 +24,41 @@ The name "MiniLM" refers to the model architecture, which is a smaller and more 
 
 ## 1. *data_preprocessor.ipynb* :
 
+```python
+# Imports
+import pandas as pd
+
+# Load movie dataset
+movies = pd.read_csv("./data/movies_metadata.csv", usecols=[5, 9, 20, 22, 23])
+
+# Drop null values
+movies = movies.dropna()
+
+# Drop rows where overview is "No overview found." or "No overview"
+movies = movies[(movies["overview"] != "No overview found.") & (movies["overview"] != "No overview")]
+
+# Keep only movies with at least 10 votes (50% interval) and vote_average of at least 6
+movies = movies[(movies["vote_count"] >= 10) & (movies["vote_average"] >= 6)]
+
+# Remove duplicate titles with lowest vote average
+mask = movies.duplicated(subset=["title"], keep=False)
+movies = movies[~(mask & (movies["vote_average"] == movies[mask]["vote_average"].min()))]
+
+# Remove strictly identical remaining duplicated titles
+movies = movies.drop_duplicates(subset="title")
+
+# Sort the dataframe in alphabetical order
+movies.sort_values("title", inplace=True)
+
+# Assign indexes
+movies["index"] = [i for i in range(0, len(movies))]
+
+# Save file
+movies.to_csv("./data/movies_metadata_preprocessed.csv")
+
+movies
+```
+
 This notebook loads the movie dataset from a CSV file and preprocesses it by 
 dropping null values, removing movies with less than 10 votes and a vote average below 6, dropping duplicate titles with the lowest vote average, and sorting the dataframe in alphabetical order. It assigns an index to each movie and saves the preprocessed data to a new CSV file that will be used in the movie recommendation app.
 
@@ -149,8 +184,6 @@ Thanks to the autosuggestion feature, we can begin typing a movie title and rece
 Afterward, we can retrieve the results by clicking the "Get Recommendations" button :
 
 ![results.png](./visuals/results.png)
-
-
 
 ## Results observations :
 
