@@ -1,6 +1,6 @@
 # Movie Recommendations
 
-This is an individual 10 days learning project at BeCode Liège.
+This is an individual 8 days learning project at BeCode Liège.
 
 ## Introduction :
 
@@ -58,13 +58,9 @@ Thanks to the autosuggestion feature, we can begin typing a movie title and rece
 
 ![dropdown.png](./visuals/dropdown.png)
 
-
-
 Afterward, we can retrieve the results by clicking the "Get Recommendations" button :
 
 ![results.png](./visuals/results.png)
-
-
 
 ## Installation/Requirements :
 
