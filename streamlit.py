@@ -18,7 +18,7 @@ def get_index(title):
 # Compute the similarity matrix and store it in the cache for Streamlit
 @st.cache_resource
 def compute_similarity_matrix():
-    #Load pre-trained SentenceBERT model
+    # Load pre-trained model
     bert = SentenceTransformer("all-MiniLM-L6-v2")
 
     # Get Embeddings for movie overviews
@@ -73,4 +73,3 @@ if st.button("Get Recommendations"):
         recommended_movie_title = get_title(recommendations[i][0])
         recommended_movie_overview = movies.loc[movies["title"] == recommended_movie_title, "overview"].iloc[0]
         st.write(f"{recommended_movie_title} : {recommended_movie_overview}")
-
