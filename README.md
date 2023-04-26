@@ -187,9 +187,9 @@ Afterward, we can retrieve the results by clicking the "Get Recommendations" but
 
 ## Results observations :
 
-As we can see, the recommendations are related to the theme of artificial intelligence and robots, which is similar to the input movie "AI Artificial Intelligence 2001." The algorithm that generated the recommendations analyze the movie plot to come up with similar movies that users might enjoy.
+As we can see, the recommendations are related to the theme of artificial intelligence and robots, which is similar to the input movie "A.I. Artificial Intelligence". The algorithm that generated the recommendations analyze the movie plot to come up with similar movies that users might enjoy.
 
-The first recommendation, "ABE," is a short film that explores the emotional side of robots and their relationship with humans. It shares a similar theme with "AI Artificial Intelligence 2001" as both movies depict the relationship between humans and artificial beings.
+The first recommendation, "ABE," is a short film that explores the emotional side of robots and their relationship with humans. It shares a similar theme with "A.I. Artificial Intelligence" as both movies depict the relationship between humans and artificial beings.
 
 The second recommendation, "Ex Machina," is a sci-fi movie that explores the concept of consciousness and artificial intelligence. Which is also very similar.
 
