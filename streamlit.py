@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 import streamlit as st
 
-# Load movie dataset
+# Load preprocessed movie dataset
 movies = pd.read_csv("./data/movies_metadata_preprocessed.csv")
 
 # Get title of movie
