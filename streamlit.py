@@ -4,7 +4,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sentence_transformers import SentenceTransformer
 import streamlit as st
 
-# Load Movie Dataset
+# Load movie dataset
 movies = pd.read_csv("./data/movies_metadata_preprocessed.csv")
 
 # Get title of movie
@@ -15,7 +15,7 @@ def get_title(index):
 def get_index(title):
     return movies[movies.title == title]["index"].values[0]
 
-# Compute the similarity matrix and put it in cache for streamlit
+# Compute the similarity matrix and store it in the cache for Streamlit
 @st.cache_resource
 def compute_similarity_matrix():
     #Load pre-trained SentenceBERT model
@@ -33,10 +33,10 @@ def compute_similarity_matrix():
 similarity = compute_similarity_matrix()
 
 # Streamlit app
-# Define title
+# Define app title
 st.title("Movie Recommendation App")
 
-# Page appearance
+# Page appearance and background image
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
@@ -57,10 +57,10 @@ right: 2rem;
 </style>
 """
 
-# Page configuration
+# Page configuration for HTML/CSS
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
-# Create an input field for the user to enter a movie
+# Create an input field for the user to enter a movie with autocompletion feature
 user_movie = st.selectbox("Enter the name of a movie :", movies["title"].tolist())
 
 # Create a submit button to trigger the recommendation code
@@ -68,7 +68,9 @@ if st.button("Get Recommendations"):
     # Perform the recommendation and display the results
     recommendations = sorted(list(enumerate(similarity[get_index(user_movie)])), key=lambda x: x[1], reverse=True)
     st.write(f"The top 3 recommendations for {user_movie} are :")
+    # Output the top 3 recommended movies
     for i in range(1, 4):
         recommended_movie_title = get_title(recommendations[i][0])
         recommended_movie_overview = movies.loc[movies["title"] == recommended_movie_title, "overview"].iloc[0]
         st.write(f"{recommended_movie_title} : {recommended_movie_overview}")
+
