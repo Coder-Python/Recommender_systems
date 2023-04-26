@@ -229,7 +229,7 @@ streamlit run streamlit.py
 
 ## Conclusions :
 
-The project was interesting, but we had to complete it quickly. We also tried to test sentiment analysis by analyzing the overall sentiment of a movie's subtitle file, but it took a lot of time and we didn't end up implementing it due to this reason, as well as the lack of a reliable source to download full subtitles from every movie in batches.
+The project was interesting, but we had to complete it quickly. We also tried to test sentiment analysis by analyzing the overall sentiment of a movie's subtitle file, but it took a lot of time and we didn't end up implementing it due to this reason, as well as the lack of a reliable source to download subtitles from every movie in batches.
 
 ## Author :
 
