@@ -1,4 +1,4 @@
-# Movie Recommendations
+# Movie Recommendation App
 
 This is an independent 8-day learning project being completed at BeCode Liège.
 
