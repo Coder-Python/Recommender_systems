@@ -6,16 +6,16 @@ This is an individual 10 days learning project at BeCode Liège.
 
 The Movie Recommendation App is a web application that recommends movies to users based on the similarity of movie overviews. The application is built using the `streamlit` library in Python, which is used to build interactive web applications. The app uses a pre-trained `SentenceTransformer` model to generate embeddings of movie overviews, and then computes the cosine similarity between these embeddings to generate a similarity matrix.
 
-## data_preprocessor.ipynb :
+## 1. *data_preprocessor.ipynb* :
 
 This notebook loads the movie dataset from a CSV file and preprocesses it by 
 dropping null values, removing movies with less than 10 votes and a vote average below 6, dropping duplicate titles with the lowest vote average, and sorting the dataframe in alphabetical order. It assigns an index to each movie and saves the preprocessed data to a new CSV file that will be used in the movie recommendation app.
 
-## streamlit.py :
+## 2. *streamlit.py* :
 
 The code is divided into several sections, each of which performs a specific function. We will now go over each section of the code in more detail.
 
-### Imports :
+### 2.1 Imports :
 
 The first section of the code imports the necessary libraries and modules that are needed to run the application. The following libraries and modules are imported :
 
@@ -24,11 +24,11 @@ The first section of the code imports the necessary libraries and modules that a
 - `SentenceTransformer` - for generating sentence embeddings
 - `streamlit` - for building the web application
 
-### Load Movie Dataset :
+### 2.2 Load Movie Dataset :
 
 The second section of the code loads the movie metadata from a CSV file called `movies_metadata_preprocessed.csv`. The metadata includes information such as the title of the movie, the overview of the movie, and other relevant information. The `pandas` library is used to load the CSV file.
 
-### Functions :
+### 2.3 Functions :
 
 The third section of the code defines several functions that are used throughout the application. The functions include :
 
@@ -36,21 +36,35 @@ The third section of the code defines several functions that are used throughout
 - `get_index(title)` - Returns the index of a movie given its title.
 - `compute_similarity_matrix()` - Computes the similarity matrix between the embeddings of the movie overviews.
 
-### Streamlit App :
+### 2.4 Streamlit App :
 
 The fourth section of the code creates the streamlit application. This includes defining the title of the application, setting the appearance of the page, and creating an input field for the user to enter the name of a movie.
 
-The `page_bg_img` variable is used to set the background image of the application. The `st.markdown()` function is used to display the background image. The `st.selectbox()` function is used to create an input field where the user can select a movie from a dropdown list.
+The `page_bg_img` variable is used to set the background image of the application and other visual details. The `st.markdown()` function is used to display the background image. The `st.selectbox()` function is used to create an input field where the user can select a movie from a dropdown list.
 
-### Recommendation Code :
+### 2.5 Recommendation Code :
 
 The fifth section of the code performs the recommendation based on the input movie. When the user clicks the "Get Recommendations" button, the application computes the similarity between the input movie and all other movies in the dataset. The results are then sorted based on their similarity score and the top 3 movies are displayed, along with their overviews.
 
 The `recommendations` variable is a list of tuples containing the index of the recommended movie and its similarity score. The `sorted()` function is used to sort the recommendations based on their similarity score. The `st.write()` function is used to display the top 3 recommended movies along with their overviews.
 
-### Caching :
+### 2.6 Caching :
 
 The code also includes caching using `@st.cache_resource` to speed up the computation of the similarity matrix. This means that the similarity matrix will only be computed once and then stored in cache, so that subsequent requests for the similarity matrix will be served from cache instead of being recomputed. This significantly reduces the time it takes to generate the recommendations.
+
+## Visuals :
+
+Thanks to the autosuggestion feature, we can begin typing a movie title and receive a list of matching titles :
+
+![dropdown.png](./visuals/dropdown.png)
+
+
+
+Afterward, we can retrieve the results by clicking the "Get Recommendations" button :
+
+![results.png](./visuals/results.png)
+
+
 
 ## Installation/Requirements :
 
